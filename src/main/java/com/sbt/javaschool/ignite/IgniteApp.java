@@ -5,6 +5,7 @@ import com.sbt.javaschool.ignite.service.impl.ExampleServiceImpl;
 import java.util.Collections;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCompute;
+import org.apache.ignite.IgniteServices;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.cluster.ClusterNode;
 import org.apache.ignite.configuration.IgniteConfiguration;
@@ -50,5 +51,9 @@ public class IgniteApp {
                 ignite.log().info(str + " -> " + exampleSvc.toUpperCase(str));
             }
         });
+
+        IgniteServices services = ignite.services();
+
+
     }
 }
